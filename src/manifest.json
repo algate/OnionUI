@@ -110,23 +110,12 @@
     "h5" : {
         "title" : "OnionUI",
         "domain" : "https://algate.github.io/",
-        "devServer":
-        {
-            "port": 8089,
-            "disableHostCheck": true,
-            "proxy":
-            {
-                "/api":
-                {
-                    "target": "http://127.0.0.1",
-                    "changeOrigin": true,
-                    "secure": false,
-                    "pathRewrite":
-                    {
-                        "^/api": ""
-                    }
-                }
-            }
+        "router":{
+            "mode": "hash",
+            "base": "/OnionUI/"
+        },
+        "devServer":{
+            "port": 8089
         }
     }
 }
