@@ -2,7 +2,7 @@
 	<view class="tui-container">
 		<view class="tui-extend-box">
 			<block v-for="(item,index) in list" :key="index" v-if="(index+1)%2!=0">
-				<view class="tui-extend-item" :class="['tui-bg-'+item.bg]" :id="item.page" @tap.stop="detail">
+				<view :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" class="tui-extend-item" :class="['tui-bg-'+item.bg]" :id="item.page" @tap.stop="detail">
 					<view class="tui-title tui-light">
 						{{item.name}}
 					</view>
@@ -23,7 +23,7 @@
 		</view>
 		<view class="tui-extend-box">
 			<block v-for="(item,index) in list" :key="index" v-if="(index+1)%2==0">
-				<view class="tui-extend-item" :class="'tui-bg-'+item.bg" :id="item.page" @tap.stop="detail">
+				<view :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" class="tui-extend-item" :class="'tui-bg-'+item.bg" :id="item.page" @tap.stop="detail">
 					<view class="tui-title tui-light">
 						{{item.name}}
 					</view>
@@ -289,7 +289,6 @@
 		-webkit-font-smoothing: antialiased;
 	}
 
-
 	.tui-container {
 		width: 100%;
 		padding: 40upx 30upx;
@@ -313,7 +312,7 @@
 		/* display: inline-block; */
 		width: 100%;
 		padding: 30upx 20upx;
-		margin-bottom: 10upx;
+		margin-bottom: 20upx;
 		border-radius: 20upx;
 		box-sizing: border-box;
 		color: #fff;

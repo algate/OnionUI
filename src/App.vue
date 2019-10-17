@@ -15,4 +15,31 @@
 <style>
 	/*每个页面公共css */
 	@import "./common/app.css";
+    @keyframes show {
+		0% {
+			transform: translateY(-50px);
+		}
+
+		60% {
+			transform: translateY(40upx);
+		}
+
+		100% {
+			transform: translateY(0px);
+		}
+	}
+
+	@-webkit-keyframes show {
+		0% {
+			transform: translateY(-50px);
+		}
+
+		60% {
+			transform: translateY(40upx);
+		}
+
+		100% {
+			transform: translateY(0px);
+		}
+	}
 </style>
