@@ -117,6 +117,10 @@
 				} else if (index == 2) {
 					let key = e.currentTarget.dataset.key;
 					url = '../maps/maps?key=' + key
+					// #ifdef MP-ALIPAY
+					 this.tui.toast("功能开发中~");
+					 return
+					// #endif
 				} else {
 					url = '../log/log'
 				}
@@ -145,7 +149,7 @@
 			},
 			previewReward: function() {
 				uni.previewImage({
-					urls: ["https://algate.github.io/img/reward.png"]
+					urls: ["https://thorui.cn/img/reward.jpg"]
 				})
 			}
 		}

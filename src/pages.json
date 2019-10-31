@@ -2,7 +2,7 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "Onion UI",
+			"navigationBarTitleText": "Thor UI",
 			"app-plus": {
 				"bounce": "vertical"
 			}
@@ -154,7 +154,7 @@
 		"style": {
 			"navigationBarBackgroundColor": "#FFFFFF",
 			"navigationBarTextStyle": "black",
-			"navigationBarTitleText": "解锁OnionUI",
+			"navigationBarTitleText": "解锁ThorUI",
 			"disableScroll": true,
 			"app-plus": {
 				"bounce": "none"
@@ -670,19 +670,46 @@
 			"navigationBarBackgroundColor": "#fff",
 			"navigationBarTextStyle": "black"
 		}
+	}, {
+		"path": "pages/extend-view/upload/upload",
+		"style": {
+			"navigationBarTitleText": "图片上传",
+			"navigationBarBackgroundColor": "#fff",
+			"navigationBarTextStyle": "black"
+		}
+	}, {
+		"path": "pages/basic-view/doc/doc",
+		"style": {}
+	}, {
+		"path": "pages/extend-view/skeleton/skeleton",
+		"style": {
+			"navigationBarBackgroundColor": "#fff",
+			"navigationBarTextStyle": "black",
+			"navigationBarTitleText": "骨架屏"
+		}
 	}    ,{
-            "path" : "pages/extend-view/upload/upload",
+            "path" : "pages/extend-view/request/request",
             "style" : {
-				"navigationBarTitleText": "图片上传",
 				"navigationBarBackgroundColor": "#fff",
-				"navigationBarTextStyle": "black"
+				"navigationBarTextStyle": "black",
+				"navigationBarTitleText": "网络请求"
+			}
+        }
+        ,{
+            "path" : "pages/extend-view/friendsList-2/friendsList-2",
+            "style" : {
+				"navigationBarBackgroundColor": "#fff",
+				"navigationBarTextStyle": "black",
+				"backgroundColorTop": "#F5F6FA",
+				"backgroundColorBottom": "#F5F6FA",
+				"navigationBarTitleText": "联系人 "
 			}
         }
     ],
 	"globalStyle": {
 		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#5677FC",
-		"navigationBarTitleText": "Onion UI",
+		"navigationBarTitleText": "Thor UI",
 		"navigationBarTextStyle": "white",
 		"backgroundColor": "#fafafa",
 		"backgroundColorTop": "#fafafa",
@@ -706,7 +733,7 @@
 			},
 			{
 				"pagePath": "pages/my/my",
-				"text": "onion",
+				"text": "thor",
 				"iconPath": "static/images/tabbar/thor_gray.png",
 				"selectedIconPath": "static/images/tabbar/thor_active.png"
 			}

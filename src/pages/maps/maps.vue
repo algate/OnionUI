@@ -112,7 +112,7 @@
 				})
 			},
 			getPoiAround(keywords) {
-				//检索周边的POI
+				//检索周边的POI	
 				uni.showLoading({
 					title: "加载中..."
 				})
@@ -388,8 +388,9 @@
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
-        /*! autoprefixer: ignore next */
-        -webkit-box-orient: vertical;
+		/* autoprefixer: off */
+		-webkit-box-orient: vertical;
+		/* autoprefixer: on */
 		font-size: 24upx;
 		color: #999;
 	}

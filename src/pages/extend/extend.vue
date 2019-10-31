@@ -2,7 +2,7 @@
 	<view class="tui-container">
 		<view class="tui-extend-box">
 			<block v-for="(item,index) in list" :key="index" v-if="(index+1)%2!=0">
-				<view :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" class="tui-extend-item" :class="['tui-bg-'+item.bg]" :id="item.page" @tap.stop="detail">
+				<view class="tui-extend-item" :class="['tui-bg-'+item.bg]" :id="item.page" @tap.stop="detail">
 					<view class="tui-title tui-light">
 						{{item.name}}
 					</view>
@@ -23,7 +23,7 @@
 		</view>
 		<view class="tui-extend-box">
 			<block v-for="(item,index) in list" :key="index" v-if="(index+1)%2==0">
-				<view :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" class="tui-extend-item" :class="'tui-bg-'+item.bg" :id="item.page" @tap.stop="detail">
+				<view class="tui-extend-item" :class="'tui-bg-'+item.bg" :id="item.page" @tap.stop="detail">
 					<view class="tui-title tui-light">
 						{{item.name}}
 					</view>
@@ -212,6 +212,18 @@
 					like: false,
 					bg: this.getRandom()
 				}, {
+					name: "骨架屏",
+					desc: "数据请求时常见到锁屏的loading动画，而现在越来越多的产品倾向于使用Skeleton Screen替代 。",
+					page: "skeleton",
+					like: false,
+					bg: this.getRandom()
+				}, {
+					name: "网络请求",
+					desc: "Network request，发起网络请求，简单的封装与使用 。",
+					page: "request",
+					like: false,
+					bg: this.getRandom()
+				}, {
 					name: "新闻模板",
 					desc: "新闻模板包含：新闻列表，新闻详情，评论等。",
 					page: "news",
@@ -289,6 +301,7 @@
 		-webkit-font-smoothing: antialiased;
 	}
 
+
 	.tui-container {
 		width: 100%;
 		padding: 40upx 30upx;
@@ -312,7 +325,7 @@
 		/* display: inline-block; */
 		width: 100%;
 		padding: 30upx 20upx;
-		margin-bottom: 20upx;
+		margin-bottom: 10upx;
 		border-radius: 20upx;
 		box-sizing: border-box;
 		color: #fff;
@@ -377,16 +390,16 @@
 
 	.tui-bg-1 {
 		background: #282537;
-		background-image: -webkit-radial-gradient(top, circle farthest-corner, #3c3b52 0%, #252233 80%);
-		background-image: radial-gradient(top, circle farthest-corner, #3c3b52 0%, #252233 80%);
+		background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+		background-image: radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
 	}
 
 	.tui-bg-2 {
 		background: #092756;
-		background: -webkit-radial-gradient(0% 100%, ellipse farthest-corner, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%),
+		background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%),
 			-webkit-linear-gradient(top, rgba(57, 173, 219, 0.25) 0%, rgba(42, 60, 87, 0.4) 100%),
 			-webkit-linear-gradient(-45deg, #670d10 0%, #092756 100%);
-		background: -webkit-radial-gradient(0% 100%, ellipse farthest-corner, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%),
+		background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%),
 			linear-gradient(to bottom, rgba(57, 173, 219, 0.25) 0%, rgba(42, 60, 87, 0.4) 100%),
 			linear-gradient(135deg, #670d10 0%, #092756 100%);
 	}
@@ -399,7 +412,7 @@
 	.tui-bg-4 {
 		background: rgb(105, 155, 200);
 		background: -webkit-gradient(radial, top left, 0px, top left, 100%, color-stop(0%, rgba(105, 155, 200, 1)), color-stop(57%, rgba(181, 197, 216, 1)));
-		background: -webkit-radial-gradient(top left, ellipse farthest-corner, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 57%);
+		background: -webkit-radial-gradient(top left, ellipse cover, rgba(105, 155, 200, 1) 0%, rgba(181, 197, 216, 1) 57%);
 	}
 
 	.tui-bg-5 {

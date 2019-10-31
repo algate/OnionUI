@@ -1,13 +1,10 @@
 <template>
 	<view class="tui-page">
-		<scroll-view class="tui-scrollList" scroll-y :scroll-into-view="scrollViewId" :style="{height:winHeight + 'px'}"
-		 @scroll="onScroll">
+		<scroll-view class="tui-scrollList" scroll-y :scroll-into-view="scrollViewId" :style="{height:winHeight + 'px'}">
 			<!--searchbox-->
 			<view class="tui-searchbox">
 				<view class="tui-search-input" @tap="search">
-					<!-- #ifdef APP-PLUS || MP -->
 					<icon type="search" :size='15' color='#999'></icon>
-					<!-- #endif -->
 					<text class="tui-search-text">搜索</text>
 				</view>
 			</view>
@@ -19,22 +16,13 @@
 			<!--联系人列表-->
 			<view class="tui-list city-list">
 				<block v-for="(list,index) in lists" :key="index">
-					<tui-sticky :scrollTop="scrollTop" stickyHeight="66rpx" v-if="list.data[0]">
-						<template v-slot:header>
-							<view class="tui-list-cell-divider" :id="list.letter">
-								{{list.letter}}
-							</view>
-						</template>
-						<template v-slot:content>
-							<block v-for="(item,index2) in list.data" :key="index2">
-								<tui-cell :last="last(list.data,index2)" @click="detail">
-									<image :src="'../../../static/images/news/'+((index2%2===0 && index2!==0)?'avatar_1.jpg':'avatar_2.jpg')"
-									 class="tui-img"></image>
-									<view class="tui-name">{{item.name}}</view>
-								</tui-cell>
-							</block>
-						</template>
-					</tui-sticky>
+					<view class="tui-list-cell-divider" :id="list.letter">
+						{{list.letter}}
+					</view>
+					<tui-cell :last="last(list.data,index2)" @click="detail" v-for="(item,index2) in list.data" :key="index2">
+						<image :src="'../../../static/images/news/'+((index2%2===0 && index2!==0)?'avatar_1.jpg':'avatar_2.jpg')" class="tui-img"></image>
+						<view class="tui-name">{{item.name}}</view>
+					</tui-cell>
 				</block>
 			</view>
 			<!--联系人列表-->
@@ -56,13 +44,9 @@
 <script>
 	const cityData = require('../../../utils/index.list.js')
 	import tuiCell from "@/components/list-cell/list-cell"
-	import tuiIcon from "@/components/icon/icon"
-	import tuiSticky from "@/components/sticky/sticky"
 	export default {
 		components: {
-			tuiCell,
-			tuiIcon,
-			tuiSticky
+			tuiCell
 		},
 		computed: {
 			last() {
@@ -80,8 +64,7 @@
 				indexBarHeight: 0, // 索引表高度
 				indexBarItemHeight: 0, // 索引表子项的高度
 				scrollViewId: '', // scroll-view滚动到的子元素的id
-				winHeight: 0,
-				scrollTop: 0
+				winHeight: 0
 			}
 		},
 		onLoad: function(options) {
@@ -137,10 +120,6 @@
 				uni.navigateTo({
 					url: '../chat/chat'
 				})
-			},
-			//页面滚动执行方式
-			onScroll(e) {
-				this.scrollTop = e.detail.scrollTop
 			}
 		}
 	}

@@ -5,7 +5,7 @@
 			<button class="btn-primary" hover-class="btn-hover" @tap="showModal">从底部弹出</button>
 		</view>
 		<!-- #endif -->
-
+		
 		<view class="btn-box ">
 			<button class="btn-primary" hover-class="btn-hover" @tap="rDrawer">从右边弹出</button>
 		</view>
@@ -17,7 +17,7 @@
 		<view class="mask-screen" @tap="hideModal" v-show="showModalStatus"></view>
 		<view :animation="animationData" class="region-box" v-show="showModalStatus">
 			<view class="region-txt" :class="[(index==regionArr.length-3 || index==regionArr.length-2 || index==regionArr.length-1)?'grow':'',tabIndex==index?'active':'']"
-			 v-for="(item,index) in regionArr" :key="index" :data-index="index" @tap.stop="getRegion">{{item}}</view>
+			 v-for="(item,index) in regionArr" :data-index="index" @tap.stop="getRegion">{{item}}</view>
 		</view>
 
 		<!--左抽屉-->
@@ -65,7 +65,7 @@
 		methods: {
 			showModal: function() {
 				// 显示遮罩层
-				// 创建动画实例
+				// 创建动画实例 
 				let animation = uni.createAnimation({
 					duration: 200,
 					timingFunction: "linear",
@@ -74,7 +74,7 @@
 				animation.translateY(uni.upx2px(712)).step()
 				this.animationData = animation.export();
 				this.showModalStatus = true
-				setTimeout(function() {
+				setTimeout(function() { 
 					animation.translateY(0).step()
 					this.animationData = animation.export()
 				}.bind(this), 200)
