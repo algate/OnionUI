@@ -1,9 +1,9 @@
 {
-    "name" : "ThorUI组件库",
+    "name" : "OnionUI组件库",
     "appid" : "",
     "description" : "",
-    "versionName" : "1.4.1",
-    "versionCode" : 109,
+    "versionName" : "1.4.0",
+    "versionCode" : 108,
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
@@ -108,7 +108,14 @@
         "usingComponents" : true
     },
     "h5" : {
-        "title" : "ThorUI",
-        "domain" : "https://thorui.cn"
+        "title" : "OnionUI",
+        "domain" : "https://algate.github.io/",
+        "router":{
+            "mode": "hash",
+            "base": "/OnionUI/"
+        },
+        "devServer":{
+            "port": 8089
+        }
     }
 }
